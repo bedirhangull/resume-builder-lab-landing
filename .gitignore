@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# next.js build output
+.next/
+out/
+
+# environment variables
+.env*
+!.env.example
+
+# miscellaneous
+.DS_Store
