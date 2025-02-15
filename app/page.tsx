@@ -27,9 +27,9 @@ export default function Page() {
       <Cover />
       <Integration />
       <Resume />
-      {/* <Blog /> */}
+
       <Faq />
-      {/* <News /> */}
+
       <Stats />
       <Footer />
     </PageWrapper>

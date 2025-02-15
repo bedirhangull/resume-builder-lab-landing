@@ -30,7 +30,7 @@ export default function Hired() {
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={0}
-                    slidesPerView={6}
+                    slidesPerView={5}
                     autoplay={{
                         delay: 1000,
                         disableOnInteraction: false,
