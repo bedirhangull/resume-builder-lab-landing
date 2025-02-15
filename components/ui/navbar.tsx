@@ -271,7 +271,7 @@ export function Navbar() {
                                   href={company.href}
                                   className="flex flex-col items-center p-2 rounded-md hover:bg-muted transition-colors"
                                 >
-                                  <img src={company.icon} alt={company.name} className="w-8 h-8 mb-1" />
+                                  <Image src={company.icon} alt={company.name} className="w-8 h-8 mb-1" />
                                   <span className="text-xs text-center">{company.name}</span>
                                 </Link>
                               </li>
