@@ -13,6 +13,7 @@ import Faq from "@/layouts/landing/faq";
 import Stats from "@/layouts/landing/stats";
 import Footer from "@/layouts/landing/footer";
 import { Navbar } from "@/components/ui/navbar";
+import Newsletter from '@/layouts/landing/news';
 
 export default function Page() {
   return (
@@ -29,7 +30,7 @@ export default function Page() {
       <Resume />
 
       <Faq />
-
+      <Newsletter />
       <Stats />
       <Footer />
     </PageWrapper>

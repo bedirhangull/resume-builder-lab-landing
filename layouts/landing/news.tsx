@@ -1,6 +1,9 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import axios from "axios";
 import {
   MailIcon,
   BookOpenIcon,
@@ -9,8 +12,38 @@ import {
   HeartIcon,
   GlobeIcon,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await axios.post("/api/mail-subscription", { email });
+
+      toast({
+        title: "Success!",
+        description: "You've been subscribed to our newsletter.",
+      });
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: axios.isAxiosError(error) && error.response?.data?.error
+          ? error.response.data.error
+          : "Failed to subscribe. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="py-4 md:py-12 lg:py-16">
       <div className="relative overflow-hidden">
@@ -24,7 +57,7 @@ export default function Newsletter() {
             </p>
             <div className="mt-7 sm:mt-12 mx-auto max-w-xl relative">
               {/* Newsletter Signup Form */}
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="relative z-10 flex space-x-3 p-3 border bg-background rounded-lg shadow-lg">
                   <div className="flex-[1_0_0%]">
                     <Label htmlFor="email" className="sr-only">
@@ -36,10 +69,13 @@ export default function Newsletter() {
                       className="h-full"
                       id="email"
                       placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="flex-[0_0_auto]">
-                    <Button type="submit" size={"icon"}>
+                    <Button type="submit" size="icon" disabled={isLoading}>
                       <MailIcon className="w-4 h-4" />
                     </Button>
                   </div>
@@ -102,23 +138,23 @@ export default function Newsletter() {
 
             {/* Newsletter Categories */}
             <div className="mt-10 sm:mt-20 flex flex-wrap gap-2 justify-center">
-              <Button variant={"outline"}>
+              <Button variant="outline">
                 <BriefcaseIcon className="flex-shrink-0 w-4 h-auto mr-2" />
                 Career Tips
               </Button>
-              <Button variant={"outline"}>
+              <Button variant="outline">
                 <LightbulbIcon className="flex-shrink-0 w-4 h-auto mr-2" />
                 Productivity
               </Button>
-              <Button variant={"outline"}>
+              <Button variant="outline">
                 <HeartIcon className="flex-shrink-0 w-4 h-auto mr-2" />
                 Wellbeing
               </Button>
-              <Button variant={"outline"}>
+              <Button variant="outline">
                 <GlobeIcon className="flex-shrink-0 w-4 h-auto mr-2" />
                 Global Trends
               </Button>
-              <Button variant={"outline"}>
+              <Button variant="outline">
                 <BookOpenIcon className="flex-shrink-0 w-4 h-auto mr-2" />
                 Industry News
               </Button>
@@ -129,3 +165,4 @@ export default function Newsletter() {
     </section>
   );
 }
+
