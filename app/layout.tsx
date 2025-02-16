@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "@/components/ui/toaster"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Toaster />
       </body>
       <GoogleAnalytics gaId="G-9Z97CMZWRH" />
+      <GoogleTagManager gtmId="G-9Z97CMZWRH" />
       <Analytics />
       <SpeedInsights />
     </html>
