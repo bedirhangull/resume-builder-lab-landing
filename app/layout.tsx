@@ -30,18 +30,20 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/path/to/favicon.ico" />
+        <GoogleAnalytics gaId="G-9Z97CMZWRH" />
+        <GoogleTagManager gtmId="G-9Z97CMZWRH" />
+        <Analytics />
+        <SpeedInsights />
+      </head>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
         {children}
         <Toaster />
       </body>
-      <GoogleAnalytics gaId="G-9Z97CMZWRH" />
-      <GoogleTagManager gtmId="G-9Z97CMZWRH" />
-      <Analytics />
-      <SpeedInsights />
     </html>
   );
 }
