@@ -194,7 +194,7 @@ export function Navbar() {
               <Image className="rounded-lg" src={Logo} width={36} height={36} alt="resume wizard logo" />
             </Link>
           </div>
-          <div className="hidden md:flex flex-grow justify-center">
+          <div className="hidden lg:flex flex-grow justify-center">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -419,14 +419,14 @@ export function Navbar() {
             </NavigationMenu>
           </div>
           <div className="flex items-center space-x-2">
-            <Button asChild variant="default" size="lg" className="hidden sm:inline-flex font-bold shadow-sm">
-              <Link href="/register">
+            <Button asChild variant="default" size="lg" className="hidden lg:inline-flex font-bold shadow-sm">
+              <Link href="/">
                 <span>Coming Soon</span>
               </Link>
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="sm:hidden">
+                <Button variant="outline" size="icon" className="lg:hidden">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
@@ -439,25 +439,25 @@ export function Navbar() {
                   </SheetDescription>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-8">
-                  <MobileNavItem href="/templates" icon={FileText} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={FileText} onClick={() => setIsOpen(false)}>
                     Resume Templates
                   </MobileNavItem>
-                  <MobileNavItem href="/examples" icon={CheckCircle} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={CheckCircle} onClick={() => setIsOpen(false)}>
                     Resume Examples
                   </MobileNavItem>
-                  <MobileNavItem href="/cover-letter" icon={PenLine} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={PenLine} onClick={() => setIsOpen(false)}>
                     Cover Letters
                   </MobileNavItem>
-                  <MobileNavItem href="/tools" icon={BarChart} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={BarChart} onClick={() => setIsOpen(false)}>
                     Career Tools
                   </MobileNavItem>
-                  <MobileNavItem href="/tools/salary-insights" icon={DollarSign} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={DollarSign} onClick={() => setIsOpen(false)}>
                     Salary Insights
                   </MobileNavItem>
-                  <MobileNavItem href="/blog" icon={BookOpen} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={BookOpen} onClick={() => setIsOpen(false)}>
                     Blog
                   </MobileNavItem>
-                  <MobileNavItem href="/languages" icon={Globe} onClick={() => setIsOpen(false)}>
+                  <MobileNavItem href="/" icon={Globe} onClick={() => setIsOpen(false)}>
                     Languages
                   </MobileNavItem>
                 </nav>

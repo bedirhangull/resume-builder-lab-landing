@@ -21,7 +21,7 @@ export default function Features() {
               Create professional, ATS-friendly resumes and cover letters in minutes. Our resume builder is designed to help you land your dream job effortlessly.
             </p>
           </div>
-          <div className="max-w-xs mx-auto sm:max-w-none grid sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4 lg:gap-4">
+          <div className=" mx-auto  grid sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4 lg:gap-4">
 
             {/* Feature 1: Suggestions for Each Job Advert */}
             <article className="sm:col-span-2 flex flex-col border border-transparent [background:linear-gradient(theme(colors.white),theme(colors.zinc.50))_padding-box,linear-gradient(120deg,theme(colors.zinc.300),theme(colors.zinc.100),theme(colors.zinc.300))_border-box] rounded-lg">

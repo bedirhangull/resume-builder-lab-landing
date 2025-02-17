@@ -1,5 +1,4 @@
 import React from 'react';
-import PageWrapper from '@/components/ui/wrapper';
 import Features from "@/layouts/landing/feature";
 import Hero from "@/layouts/landing/hero";
 import Hired from "@/layouts/landing/hired";
@@ -17,7 +16,7 @@ import Newsletter from '@/layouts/landing/news';
 
 export default function Page() {
   return (
-    <PageWrapper landing={true}>
+    <div className="flex-grow container mx-auto px-4 pt-16">
       <Navbar />
       <Hero />
       <Hired />
@@ -28,11 +27,10 @@ export default function Page() {
       <Cover />
       <Integration />
       <Resume />
-
       <Faq />
       <Newsletter />
       <Stats />
       <Footer />
-    </PageWrapper>
+    </div>
   );
 }
