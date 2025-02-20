@@ -35,7 +35,6 @@ export default function RootLayout({
           <TermlyCMP websiteUUID="2fa77797-b640-4408-bc73-b4c173485603" />
         </Suspense>
 
-        <a href="#" className="termly-display-preferences">Consent Preferences</a>
         {children}
       </body>
     </html>
