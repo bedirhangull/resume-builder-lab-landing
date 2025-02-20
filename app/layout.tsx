@@ -1,3 +1,4 @@
+import { Suspense } from "react"; // Import Suspense from React
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -28,12 +29,12 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
       </head>
-      <body
-        suppressHydrationWarning
-        className="antialiased"
-      >
-        {/* Termly Consent Manager */}
-        <TermlyCMP websiteUUID="2fa77797-b640-4408-bc73-b4c173485603" />
+      <body suppressHydrationWarning className="antialiased">
+        {/* Wrap TermlyCMP with Suspense and provide a fallback */}
+        <Suspense fallback={<div>Loading consent manager...</div>}>
+          <TermlyCMP websiteUUID="2fa77797-b640-4408-bc73-b4c173485603" />
+        </Suspense>
+
         <a href="#" className="termly-display-preferences">Consent Preferences</a>
         {children}
       </body>
