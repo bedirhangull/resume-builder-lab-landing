@@ -13,13 +13,14 @@ import Stats from "@/layouts/landing/stats";
 import Footer from "@/layouts/landing/footer";
 import { Navbar } from "@/components/ui/navbar";
 import Newsletter from '@/layouts/landing/news';
-import NewsletterStickyfrom from "@/layouts/landing/newsletter-sticky"
+import ConsentBanner from '@/layouts/landing/consent-banner';
 
 export default function Page() {
   return (
     <div className="flex-grow container mx-auto px-4 pt-16">
       <Navbar />
-      <NewsletterStickyfrom />
+      <ConsentBanner />
+      {/* <NewsletterStickyfrom /> */}
       <Hero />
       <Hired />
       <Review />
